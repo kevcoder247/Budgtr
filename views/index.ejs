@@ -4,20 +4,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="">
   <title>Index</title>
 </head>
 <body>
   <h1>Budget Index</h1>
-  <h2><%=budgtr[0].date%></h2>
-
+  <!-- <h2><%=budgtr[0].date%></h2> -->
+<!-- 
   <% budgtr.forEach((entry) => { %>
-    <p><%= entry.date %></p>
-    <p><%= entry.name %></p>
-    <p><%= entry.from %></p>
-    <p><%= entry.amount %></p>
-    <p><%= entry.tags %></p>
-    <hr>
- <% }) %>
+   <a href="/budgtr/<%= entry %>">
+    <p>Date: <%= entry.date %></p>
+    <p>Type: <%= entry.name %></p>
+    <p>From: <%= entry.from %></p>
+   </a>
+  <hr>
+ <% }) %> -->
 
+
+ <% for(let i = 0; i < budgtr.length; i++){ %>
+<a href="/budgtr/<%=i%>">
+  <p>Date: <%= budgtr[i].date; %></p> 
+  <p>Type: <%= budgtr[i].name %></p>
+  <p>From: <%= budgtr[i].from %></p>
+</a>
+  <hr>
+<% } %>
+</a>
 </body>
 </html>
