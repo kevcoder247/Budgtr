@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index</title>
+</head>
+<body>
+  <h1>Budget Index</h1>
+  <h2><%=budgtr[0].date%></h2>
+
+  <% budgtr.forEach((entry) => { %>
+    <p><%= entry.date %></p>
+    <p><%= entry.name %></p>
+    <p><%= entry.from %></p>
+    <p><%= entry.amount %></p>
+    <p><%= entry.tags %></p>
+    <hr>
+ <% }) %>
+
+</body>
+</html>
