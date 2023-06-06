@@ -16,6 +16,8 @@ const budgtr = require('./models/budgtr');
 //======================================
 app.use(express.urlencoded({ extended: false }))
 
+app.use(express.static(__dirname + '/public'))
+
 
 //======================================
 //          Routes
