@@ -14,7 +14,7 @@ const budgtr = require('./models/budgtr');
 //======================================
 //          MiddleWare
 //======================================
-
+app.use(express.urlencoded({ extended: false }))
 
 
 //======================================
@@ -25,6 +25,18 @@ app.get('/budgtr/', (req, res) => {
   res.render('index.ejs', {budgtr})
   // console.log(budget)
 });
+
+//NEW
+app.get('/budgtr/new', (req, res) => {
+  res.render('new.ejs')
+})
+
+//Create 
+app.post('/budgtr/', (req, res) =>{
+  console.log('New Entry:', req.body);
+  res.redirect('/budgtr/');
+})
+
 
 //Show
 app.get('/budgtr/:id', (req, res) => {
